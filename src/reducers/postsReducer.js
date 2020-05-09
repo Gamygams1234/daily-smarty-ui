@@ -9,7 +9,8 @@ export default function (state = initState, action) {
   switch (action.type) {
     case SET_RECENT_POSTS:
       break;
-      return [...state, (recentPosts: action.payload)];
+      const recentPosts = action.payload;
+      return { ...state, recentPosts };
     default:
       return state;
   }

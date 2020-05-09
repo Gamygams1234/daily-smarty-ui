@@ -7,11 +7,11 @@ export function fetchRecentPosts() {
     // perfor requests here
     axios
       .get("https://api.dailysmarty.com/posts")
-      .then((res) => {
-        console.log("Axios response", res.data.posts);
+      .then((response) => {
+        console.log("Axios response", response.data.posts);
         dispatch({
           type: SET_RECENT_POSTS,
-          payload: res.data.posts,
+          payload: response.data.posts,
         });
       })
       .catch((error) => {
