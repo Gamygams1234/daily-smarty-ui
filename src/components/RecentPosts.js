@@ -1,6 +1,11 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import * as actions from "../actions";
 
-export default class RecentPosts extends Component {
+class RecentPosts extends Component {
+  componentDidMount() {
+    this.props.fetchRecentPosts();
+  }
   render() {
     return (
       <div className="recent-posts">
@@ -16,3 +21,6 @@ export default class RecentPosts extends Component {
     );
   }
 }
+
+// later on we will put mapStateToProps , actions
+export default connect(null, actions)(RecentPosts);
