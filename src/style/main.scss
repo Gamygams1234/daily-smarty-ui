@@ -1,6 +1,24 @@
-.logo-main {
-  img {
-    width: 105px;
-    height: 105px;
+.container {
+  display: grid;
+  grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+
+  .logo-main {
+    grid-column: 2;
+    grid-row: 1;
+    img {
+      width: 105px;
+      height: 105px;
+    }
+  }
+
+  .search-bar {
+    grid-column: 1/-1;
+    grid-row: 2;
+    .search-bar input {
+      width: 66vw;
+      padding-left: 0.75em;
+    }
   }
 }

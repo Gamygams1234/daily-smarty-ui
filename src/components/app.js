@@ -7,9 +7,11 @@ export default class App extends Component {
   render() {
     return (
       <div className="app">
-        <Logo />
-        <SearchBar />
-        <RecentPosts />
+        <div className="container container-homepage">
+          <Logo />
+          <SearchBar />
+          <RecentPosts />
+        </div>
       </div>
     );
   }
