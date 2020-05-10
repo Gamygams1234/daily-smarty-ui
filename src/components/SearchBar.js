@@ -7,9 +7,7 @@ class SearchBar extends Component {
     return <input type="text" placeholder="Search DailySmarty" {...field.input} />;
   }
   handleFormSubmit = ({ query }) => {
-    console.log("Trying to handle Submit", query);
-    // navigate to a  new route
-    this.props.history.push("/results");
+    this.props.onSubmit(query);
   };
 
   render() {
