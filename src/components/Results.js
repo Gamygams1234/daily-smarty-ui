@@ -1,10 +1,16 @@
 import React, { Component } from "react";
 import Logo from "./logo";
 import SearchBar from "./SearchBar";
+import { connect } from "react-redux";
+import * as actions from "../actions";
 
 class Results extends Component {
   handleResultsSubmit = (query) => {
-    console.log(query);
+    // this is the action that we are going to get
+    this.props.fetchPostsWithQuery(query);
+    console.log("Trying to handle Submit", query);
+    // navigate to a  new route
+    this.props.history.push("/results");
   };
   render() {
     return (
@@ -17,4 +23,4 @@ class Results extends Component {
   }
 }
 
-export default Results;
+export default connect(null, actions)(Results);
