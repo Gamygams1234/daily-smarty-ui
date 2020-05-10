@@ -4,6 +4,7 @@ import SearchBar from "./SearchBar";
 import ResultsPosts from "./ResultsPosts";
 import { connect } from "react-redux";
 import * as actions from "../actions";
+import { Link } from "react-router-dom";
 
 class Results extends Component {
   handleResultsSubmit = (query) => {
@@ -17,7 +18,9 @@ class Results extends Component {
     return (
       <div>
         <h1>Results</h1>
-        <Logo size={55} />
+        <Link to="/">
+          <Logo size={55} />
+        </Link>
         <SearchBar onSubmit={(query) => this.handleResultsSubmit(query)} />
         <ResultsPosts />
       </div>
