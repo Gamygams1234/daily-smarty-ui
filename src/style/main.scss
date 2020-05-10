@@ -1,17 +1,12 @@
 .logo-main {
   grid-column: 2;
   grid-row: 1;
-  img {
-    width: 105px;
-    height: 105px;
-  }
-
-  .search-bar {
-    grid-column: 1/-1;
-    grid-row: 2;
-    .search-bar input {
-      width: 66vw;
-      padding-left: 0.75em;
-    }
+}
+.search-bar {
+  grid-column: 1/-1;
+  grid-row: 2;
+  .search-bar input {
+    width: 66vw;
+    padding-left: 0.75em;
   }
 }
