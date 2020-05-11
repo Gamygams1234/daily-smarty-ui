@@ -7,11 +7,10 @@ import * as actions from "../actions";
 
 class Home extends Component {
   handleSearchBarSubmit = (query) => {
-    // this is the action that we are going to get
-    this.props.fetchPostsWithQuery(query);
-    console.log("Trying to handle Submit", query);
-    // navigate to a  new route
-    this.props.history.push("/results");
+    // this will delay the results that will show up
+    this.props.fetchPostsWithQuery(query, () => {
+      this.props.history.push("/results");
+    });
   };
   render() {
     return (

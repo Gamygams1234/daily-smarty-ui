@@ -9,10 +9,9 @@ import { Link } from "react-router-dom";
 class Results extends Component {
   handleResultsSubmit = (query) => {
     // this is the action that we are going to get
-    this.props.fetchPostsWithQuery(query);
-    console.log("Trying to handle Submit", query);
-    // navigate to a  new route
-    this.props.history.push("/results");
+    this.props.fetchPostsWithQuery(query, () => {
+      this.props.history.push("/results");
+    });
   };
   render() {
     return (
