@@ -13,9 +13,11 @@ class SearchBar extends Component {
   render() {
     const { handleSubmit } = this.props;
     return (
-      <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))} className="search-bar homepage-search-bar">
-        <Field name="query" component={this.renderInput} />
-        <p>Press return to search</p>
+      <form className="search-bar" onSubmit={handleSubmit(this.handleFormSubmit.bind(this))} className="search-bar homepage-search-bar">
+        <div className="search-bar__wrapper">
+          <Field name="query" component={this.renderInput} />
+          <p>Press return to search</p>{" "}
+        </div>
       </form>
     );
   }
