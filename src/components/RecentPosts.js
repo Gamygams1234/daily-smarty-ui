@@ -16,9 +16,9 @@ class RecentPosts extends Component {
     });
     return (
       <div className="recent-posts">
-        <div className="recent-posts-wrapper">
-          <div className="recent-posts-heading">RecentPosts</div>
-          <ul className="recent-posts-posts">{posts}</ul>
+        <div className="recent-posts__wrapper">
+          <div className="recent-posts__heading">RecentPosts</div>
+          <ul className="recent-posts__posts">{posts}</ul>
         </div>
       </div>
     );
