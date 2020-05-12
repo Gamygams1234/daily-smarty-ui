@@ -15,6 +15,26 @@ class Post extends Component {
     });
     return topics;
   }
+  // this is how we are going to format our links
+  getNameForPostLink(str) {
+    var n = str.lastIndexOf("/");
+    var link = str.substring(n + 1, str.length);
+    // this would end it ate the end if we did not have this check
+    if (n + 1 == str.length) {
+      link = str.slice(0, n);
+      n = link.lastIndexOf("/");
+      link = str.substring(n + 1, str.length - 1);
+    }
+
+    if (link.includes(".html")) {
+      link = link.substring(0, link.length - 5);
+    }
+    if (link.includes(".htm")) {
+      link = link.substring(0, link.length - 4);
+    }
+
+    return link;
+  }
   // this one we use if there is an extra object
   renderLinks() {
     let links = this.props.post_links.map((link, index) => {
@@ -22,7 +42,7 @@ class Post extends Component {
         <div className="post-link" key={index}>
           <div className="post-link__box"></div>
           <div className="post-link__link">
-            <a href={link.link_url}>Useful Link #{index + 1}</a>
+            <a href={link.link_url}>{this.getNameForPostLink(link.link_url)}</a>
           </div>
         </div>
       );

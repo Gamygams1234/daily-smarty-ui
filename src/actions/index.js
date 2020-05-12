@@ -25,6 +25,7 @@ export function fetchPostsWithQuery(query, callback) {
     axios
       .get(`https://api.dailysmarty.com/search?q=${query}`)
       .then((response) => {
+        console.log(response);
         dispatch({
           type: SET_RESULTS_POSTS,
           payload: response.data.posts,
