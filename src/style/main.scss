@@ -4,7 +4,6 @@ $color-blue-one: #0079ff;
 $color-gray-three: #d8d8d8;
 
 .post-topic {
-  margin: 0 4px;
 }
 
 body {
@@ -24,7 +23,7 @@ body {
 }
 
 .home {
-  @include default-page-layout() // grid-template-rows: 1fr 2fr 1fr;;;;;;
+  @include default-page-layout() // grid-template-rows: 1fr 2fr 1fr;;;;;;;
 }
 .logo-main {
   display: grid;

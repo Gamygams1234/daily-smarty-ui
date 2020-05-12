@@ -3,11 +3,9 @@
   align-content: center;
   justify-items: center;
 
-  background-color: skyblue;
-
   .recent-posts__wrapper {
     //   this is going to help us see the background
-    background-color: rgb(71, 203, 154);
+
     display: grid;
     grid-row-gap: 21px;
     width: 100%;
@@ -19,8 +17,21 @@
     .recent-posts__posts {
       display: grid;
       justify-content: space-evenly;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-gap: 42px;
+      grid-template-columns: 1fr;
+      grid-gap: 40px;
+      @media screen and (min-width: 700px) {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 20px;
+      }
     }
+  }
+}
+
+.recent-post {
+  display: grid;
+  grid-gap: 15px;
+  .recent-post__topic {
+    font-size: 14px;
+    color: $color-gray-one;
   }
 }
