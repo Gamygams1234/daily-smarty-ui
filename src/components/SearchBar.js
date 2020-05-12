@@ -4,7 +4,7 @@ import { withRouter } from "react-router-dom";
 
 class SearchBar extends Component {
   renderInput(field) {
-    return <input type="text" placeholder="Search DailySmarty" {...field.input} />;
+    return <input type="text" placeholder="&#xf002; Search DailySmarty" {...field.input} />;
   }
   handleFormSubmit = ({ query }) => {
     this.props.onSubmit(query);

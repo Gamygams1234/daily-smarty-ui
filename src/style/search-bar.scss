@@ -15,6 +15,9 @@
 
       &::placeholder {
         color: #b3b3b3;
+        font-family: "Font Awesome\ 5 Free", "Lato", Arial, Helvetica, sans-serif;
+        // the font weight needs to be 600
+        font-weight: 600;
       }
 
       &:focus {
