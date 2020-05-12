@@ -10,14 +10,16 @@ body {
   display: grid;
   justify-content: center;
 }
-
-.home {
+@mixin default-page-layout {
   height: 100vh;
   width: 66vw;
   display: grid;
   align-content: space-around;
   justify-items: stretch;
-  // grid-template-rows: 1fr 2fr 1fr;
+}
+
+.home {
+  @include default-page-layout() // grid-template-rows: 1fr 2fr 1fr;;
 }
 .logo-main {
   display: grid;
@@ -39,3 +41,5 @@ $color-blue-one: #0079ff;
 
 @import "./search-bar.scss";
 @import "./recentPosts.scss";
+@import "./home.scss";
+@import "./results.scss";
