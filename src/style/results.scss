@@ -35,18 +35,28 @@
     font-size: 18px;
     line-height: 22px;
   }
-
   .result-post__links {
-    display: flex;
+    display: none;
+    transition: display 0.2s ease-in-out;
+  }
+
+  .result-post__links-active {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: minmax(70px, auto);
+    grid-row-gap: 20px;
+    transition: display 0.2s ease-in-out;
   }
 }
 
 .post-link {
-  min-height: 70px;
   display: flex;
+  flex-basis: 205px;
+  margin-right: 37px;
 
   .post-link__box {
     min-width: 70px;
+    height: 70px;
     background-color: $color-gray-three;
     margin-right: 16px;
   }

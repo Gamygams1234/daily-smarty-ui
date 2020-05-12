@@ -3,7 +3,7 @@ import AnimateHeight from "react-animate-height";
 
 class Post extends Component {
   state = {
-    height: 0,
+    activeClass: false,
   };
   renderTopics() {
     let topics = this.props.associated_topics.map((topic, index) => {
@@ -19,7 +19,7 @@ class Post extends Component {
   getNameForPostLink(str) {
     var n = str.lastIndexOf("/");
     var link = str.substring(n + 1, str.length);
-    // this would end it ate the end if we did not have this check
+    // this would end it ate the end if we did not have this checkddd
     if (n + 1 == str.length) {
       link = str.slice(0, n);
       n = link.lastIndexOf("/");
@@ -37,17 +37,21 @@ class Post extends Component {
   }
   // this one we use if there is an extra object
   renderLinks() {
-    let links = this.props.post_links.map((link, index) => {
-      return (
-        <div className="post-link" key={index}>
-          <div className="post-link__box"></div>
-          <div className="post-link__link">
-            <a href={link.link_url}>{this.getNameForPostLink(link.link_url)}</a>
+    if (this.props.post_links.length > 0) {
+      let links = this.props.post_links.map((link, index) => {
+        return (
+          <div className="post-link" key={index}>
+            <div className="post-link__box"></div>
+            <div className="post-link__link">
+              <a href={link.link_url}>{this.getNameForPostLink(link.link_url)}</a>
+            </div>
           </div>
-        </div>
-      );
-    });
-    return links;
+        );
+      });
+      return links;
+    } else {
+      return <div className="no-content">No Post Links.</div>;
+    }
   }
 
   render() {
@@ -60,14 +64,13 @@ class Post extends Component {
       );
     } else if (this.props.type === "result") {
       return (
-        <li className="result-post" onMouseEnter={() => this.setState({ height: 70 })} onMouseLeave={() => this.setState({ height: 0 })}>
+        <li className="result-post" onMouseEnter={() => this.setState({ activeClass: true })} onMouseLeave={() => this.setState({ activeClass: false })}>
           <div className="result-post__topics">{this.renderTopics()}</div>
           <div className="result-post__title">
             <a href={this.props.url_for_post}>{this.props.title}</a>
           </div>
-          <AnimateHeight duration={500} height={this.state.height}>
-            <div className="result-post__links">{this.renderLinks()}</div>
-          </AnimateHeight>
+
+          <div className={this.state.activeClass ? "result-post__links result-post__links-active" : "result-post__links"}>{this.renderLinks()}</div>
         </li>
       );
     }
