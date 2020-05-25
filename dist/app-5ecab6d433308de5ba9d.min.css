@@ -1,0 +1,246 @@
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.app-wrapper {
+  display: grid;
+  justify-content: center;
+}
+
+.home {
+  height: 100vh;
+  width: 66vw;
+  display: grid;
+  align-content: space-around;
+  justify-items: stretch;
+}
+
+.logo-main {
+  display: grid;
+  justify-items: center;
+}
+
+.logo-main,
+.recent-posts {
+  display: grid;
+  justify-items: center;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.no-content {
+  color: #666666;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.recent-posts {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+}
+
+.recent-posts .recent-posts__wrapper {
+  display: grid;
+  grid-row-gap: 21px;
+  width: 100%;
+}
+
+.recent-posts .recent-posts__wrapper .recent-posts__heading {
+  color: #0079ff;
+  font-size: 14px;
+}
+
+.recent-posts .recent-posts__wrapper .recent-posts__posts {
+  display: grid;
+  justify-content: space-evenly;
+  grid-template-columns: 1fr;
+  grid-gap: 40px;
+}
+
+@media screen and (min-width: 700px) {
+  .recent-posts .recent-posts__wrapper .recent-posts__posts {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+  }
+}
+
+.recent-post {
+  display: grid;
+  grid-gap: 15px;
+}
+
+.recent-post .recent-post__topic {
+  font-size: 14px;
+  color: #666666;
+}
+
+.results {
+  height: 100vh;
+  width: 66vw;
+  display: grid;
+  margin-top: 52px;
+  grid-row-gap: 44px;
+}
+
+.results-posts .results-posts__wrapper .results-posts__posts {
+  display: grid;
+  grid-row-gap: 21px;
+  justify-content: stretch;
+}
+
+.result-post {
+  display: grid;
+  align-content: space-around;
+  grid-row-gap: 22px;
+}
+
+.result-post .result-post__topics > * {
+  color: #0079ff;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: normal;
+}
+
+.result-post .result-post__title a {
+  color: #666666;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.result-post .result-post__links {
+  display: none;
+  transition: display 0.2s ease-in-out;
+}
+
+.result-post .result-post__links-active {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: minmax(70px, auto);
+  grid-row-gap: 20px;
+  transition: display 0.2s ease-in-out;
+}
+
+@media screen and (min-width: 500px) {
+  .result-post .result-post__links-active {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .result-post .result-post__links-active {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.post-link {
+  display: flex;
+  flex-basis: 205px;
+  margin-right: 37px;
+}
+
+.post-link .post-link__box {
+  min-width: 70px;
+  height: 70px;
+  background-color: #d8d8d8;
+  margin-right: 16px;
+}
+
+.post-link .post-link__link a {
+  color: #666666;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.search-bar {
+  display: grid;
+}
+
+.search-bar .search-bar__wrapper {
+  display: grid;
+  grid-row-gap: 23px;
+  width: 100%;
+}
+
+.search-bar .search-bar__wrapper input {
+  padding-left: 35px;
+  color: #666666;
+  box-shadow: 2px 3px 20px 1px rgba(0, 0, 0, 0.1);
+  border: 0px solid transparent;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+}
+
+.search-bar .search-bar__wrapper input::-webkit-input-placeholder {
+  color: #b3b3b3;
+  font-family: "Font Awesome 5 Free", "Lato", Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
+
+.search-bar .search-bar__wrapper input::-moz-placeholder {
+  color: #b3b3b3;
+  font-family: "Font Awesome 5 Free", "Lato", Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
+
+.search-bar .search-bar__wrapper input:-ms-input-placeholder {
+  color: #b3b3b3;
+  font-family: "Font Awesome 5 Free", "Lato", Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
+
+.search-bar .search-bar__wrapper input::-ms-input-placeholder {
+  color: #b3b3b3;
+  font-family: "Font Awesome 5 Free", "Lato", Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
+
+.search-bar .search-bar__wrapper input::placeholder {
+  color: #b3b3b3;
+  font-family: "Font Awesome 5 Free", "Lato", Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
+
+.search-bar .search-bar__wrapper input:focus {
+  outline: none;
+  box-shadow: 2px 3px 20px 1px rgba(0, 0, 0, 0.3);
+}
+
+.search-bar .search-bar__wrapper p {
+  text-align: right;
+  font-size: 14px;
+  color: #b3b3b3;
+}
+
+.search-bar__home {
+  align-content: center;
+  justify-items: center;
+}
+
+.search-bar__home input {
+  height: 100px;
+  font-size: 40px;
+}
+
+@media screen and (max-width: 600px) {
+  .search-bar__home input {
+    font-size: 23px;
+    height: 59px;
+  }
+}
+
+.search-bar__results {
+  align-content: start;
+  justify-items: center;
+}
+
+.search-bar__results input {
+  font-size: 22px;
+  height: 36px;
+}
+
+/*# sourceMappingURL=app-9fd0323efa750c1bbc2b.map*/

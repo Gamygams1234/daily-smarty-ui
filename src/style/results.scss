@@ -35,6 +35,9 @@
     font-size: 18px;
     line-height: 22px;
   }
+  a:hover {
+    color: $color-blue-one;
+  }
   .result-post__links {
     display: none;
     transition: display 0.2s ease-in-out;
@@ -72,5 +75,8 @@
     color: $color-gray-one;
     font-size: 14px;
     line-height: 17px;
+  }
+  a:hover {
+    color: $color-blue-one;
   }
 }
